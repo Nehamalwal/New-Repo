@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 5rem;
+        }
+        .page{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         gap: 5rem;
+         height: 100vh;
+         width: 70%;
+         border: 2px solid black;
+         padding: 5rem ;
+        }   
+        .header{
+            width: 100%;
+            border: 2px solid green;
+            height: 5rem;
+        }
+        .header>h1,.footer>h1{
+            text-align: center;
+        }
+      .main{
+        
+        height: 50vh;
+        width: 100%;
+        display: flex;
+        gap: 5rem;
+
+      }
+      .part{
+         width: 50%;
+         height: 100%;
+      }
+      .left{
+        display: flex;
+         flex-direction: column;
+         gap: 5rem;
+      }
+      .sub-box{
+        height: 50%;
+        width: 100%;
+        border: 2px solid black;
+        display: flex;
+        flex-direction: column;
+      }
+      .sub-box>img{
+        width: 100%;
+        height: 50%;
+      }
+      .sub-box>video{
+        width: 100%;
+        height: 40%;
+      }
+      .heading-para{
+        border: 2px solid black;
+      }
+      .footer{
+        width: 100%;
+            border: 2px solid green;
+            height: 5rem;
+      }
+    </style>
+</head>
+<body>
+    <div class="page">
+    <header class="header">
+        <h1>Header</h1>
+    </header>
+    <main class="main">
+        <div class="left part">
+            <div class="sub-box">
+                <a href="">Link1</a><br>
+                <a href="">Link2</a>
+            </div>
+            <div class="sub-box">
+                <img src="../HTML/image.png" alt=""><br>
+                <video src="Animation - 1738733720307.mp4" autoplay loop></video>
+            </div>
+        </div>
+        <div class="heading-para part">
+            <h1>Heading</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse explicabo reprehenderit nisi tempore in, voluptatibus suscipit corporis omnis eos nobis?</p>
+        </div>
+    </main>
+    <footer class="footer">
+        <h1>Footer</h1>
+    </footer>
+</div>
+</body>
+</html>

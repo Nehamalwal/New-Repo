@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Layout with Flexbox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .section {
+            padding: 20px;
+            color: white;
+           
+        }
+
+        .header {
+            background-color: #5bc0de;
+            width: 100%;
+            text-align: center;
+        }
+
+        .content-wrapper {
+            display: flex;
+            gap: 10px;
+        }
+
+        .left-column {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .right-column {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .hero {
+            background-color: hsl(306, 49%, 79%);
+            color: white;
+            text-align: center;
+           
+        }
+
+        .sidebar {
+            background-color: #98d698;
+            color: white;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .main-content {
+            background-color: #ffd700;
+            color: white;
+            min-height: 200px;
+            text-align: center;
+        }
+
+        .extra-content {
+            background-color: #808080;
+            text-align: center;
+        }
+
+        .bottom-section {
+            display: flex;
+            gap: 10px;
+        }
+
+        .related-images {
+            background-color: #2ecc71;
+            flex: 2;
+            text-align: center;
+        }
+
+        .related-posts {
+            background-color: #ffb6c1;
+            color: white;
+            flex: 1;
+            text-align: center;
+        }
+
+        .footer {
+            background-color: #ffa500;
+            width: 100%;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+
+            .bottom-section {
+                flex-direction: column;
+            }
+
+            .left-column, .right-column {
+                width: 100%;
+            }
+
+            .related-images, .related-posts {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section header">Header</div>
+        
+        <div class="content-wrapper">
+            <div class="left-column">
+                <div class="section hero">Hero</div>
+                <div class="section sidebar">Sidebar</div>
+            </div>
+            
+            <div class="right-column">
+                <div class="section main-content">Main Content</div>
+                <div class="section extra-content">Extra Content</div>
+            </div>
+        </div>
+
+        <div class="bottom-section">
+            <div class="section related-images">Related Images</div>
+            <div class="section related-posts">Related Posts</div>
+        </div>
+
+        <div class="section footer">Footer</div>
+    </div>
+</body>
+</html>
