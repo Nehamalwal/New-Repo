@@ -1,17 +1,23 @@
-gsap.to(".box",{
-    x:600,
-    duration:1.2,
-    stagger:1,
-    delay:1,
-    borderRadius:("75%")
-
+gsap.to(" #page1 .box",{
+     
+      x:600,
+      duration:2,
+      delay:1,
+      rotation:360,
+      
+      
 })
-gsap.to(".box1",{
-    x:-600,
-    duration:1.2,
-    stagger:1,
+gsap.to(" #page2 .box",{
+     
+    x:600,
+    duration:2,
     delay:1,
-    borderRadius:("75%"),
-    
-
+    scrollTrigger:'#page2 .box'
+})
+gsap.to(" #page3 .box",{
+     
+    x:600,
+    duration:2,
+    delay:1,
+    scrollTrigger:'#page3 .box'
 })
