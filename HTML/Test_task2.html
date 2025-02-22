@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #2c2c2c;
+        }
+
+        .loader {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            
+        }
+
+        .dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #da8361;
+            border-radius: 50%;
+            animation: moveDot 2s infinite;
+            
+        }
+
+       
+        .dot:nth-child(1) {
+            left: 0;
+            animation-delay: 1s;
+        }
+
+        .dot:nth-child(2) {
+            left: 25px;
+            animation-delay: 2s;
+        }
+
+        .dot:nth-child(3) {
+            right: 25px;
+            animation-delay: 1.4s;
+        }
+
+        .dot:nth-child(4) {
+            right: 0;
+            animation-delay: 1.8s;
+        }
+
+        @keyframes moveDot {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(30px, -30px);
+            }
+            50% {
+                transform: translate(60px, 0);
+            }
+            75% {
+                transform: translate(30px, 30px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+</body>
+</html>

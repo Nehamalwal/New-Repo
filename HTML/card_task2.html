@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        font-family: Arial,  sans-serif;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(250, 200, 231);
+    }
+    .card{
+        width: 300px;
+        height: 400px;
+        background: #e97979;
+        border-radius: 20px;
+        transform-style: preserve-3d;
+        cursor: pointer;
+        perspective: 1000px;
+    }
+    .card-part1 , .card-back{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        transition: transform 1s ease;
+        backface-visibility: hidden;
+        border-radius: 15px;
+    }
+    .card-part1{
+        background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+        z-index: 2;
+    }
+    .card-back{
+        background: linear-gradient(45deg ,#1756c9 ,#184fc7);
+        transform: rotateY(180deg);
+        z-index: 1;
+    }
+    .card-img{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: #fff;
+        padding: 20px;
+        margin-bottom: 20px;
+        animation: float 3s ease-in-out infinite;
+
+    }
+    .card-text , .card-title{
+        text-align: center;
+        color: #fff;
+    }
+    .card:hover .card-part1 {
+            transform: rotateY(180deg);
+        }
+
+        .card:hover .card-back {
+            transform: rotateY(360deg);
+        }
+
+
+
+</style>
+<body>
+    <div class="card">
+        <div class="card-part1">
+            <div class="card-img">
+                <img src="nanu.jpg" alt="Gift" style="height: 110px; width: 110px; object-fit: cover;border-radius: 50%;">
+            </div>
+            <h2 class="card-title">Happy Birthday!</h2>
+            <p class="card-text">"Cheers to another year of wonderful adventures!"</p>
+        </div>
+        <div class="card-back">
+            <h2 class="card-title">Cute baby</h2>
+            <p class="card-text">
+                Wishing you a day filled with joy, laughter, and unforgettable moments. May all your dreams come true!
+            </p>
+        </div>
+    </div>
+</body>
+</html>
