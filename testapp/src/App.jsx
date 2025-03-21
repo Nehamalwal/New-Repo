@@ -1,10 +1,16 @@
 import React from 'react'
-import { BrowserRouter,Routes,Route } from 'react-router'
+import { BrowserRouter , Routes,Route } from 'react-router'
 import FirstPage from './component/FirstPage'
 import Login from './component/Login'
 import Signup from './component/Signup'
+import Usestate from './component/Usestate'
+import Array_task from './component/Array_task'
+import ContactPage from './component/ContactPage'
+
 const App = () => {
   return (
+    // <Usestate/>
+    // <Array_task/>
    <BrowserRouter>
    <Routes>
     <Route path='/' element={<Login/>}/>
@@ -12,6 +18,8 @@ const App = () => {
     <Route path ="/firstpage" element ={<FirstPage/>}/>
    </Routes>
    </BrowserRouter>
+  
+  
   )
 }
 
