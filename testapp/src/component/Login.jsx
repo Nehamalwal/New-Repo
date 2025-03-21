@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router";
+import GoogleAuth from "./GoogleAuth";
 
 const Login = () => {
   const [formData, setFormData] = useState({ username: "", password: "" });
@@ -9,9 +10,20 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Login Data:", formData);
+
+    formData.append("username",username);
+    formData.append("password",password);
+
+    try{
+      const response = await post("http://localhost:3000/api/login", formData);
+      console.log(response)
+    } catch(error){
+      console.error(error)
+    }
+   
+    // console.log("Login Data:", formData);
   };
 
   return (
@@ -55,7 +67,9 @@ const Login = () => {
           >
             Login
           </motion.button>
+          
         </form>
+        <GoogleAuth/>
       </motion.div>
     </div>
   );
