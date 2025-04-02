@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router";
 import GoogleAuth from "./GoogleAuth";
+import axios from 'axios';
+import axiosInstance from '../../axiosInstance';
+import { baseURL } from "../../config";
+
 
 const Login = () => {
-  const [formData, setFormData] = useState({ username: "", password: "" });
+  const [formData, setFormData] = useState({ email: "", password: "" });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -13,12 +17,17 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    formData.append("username",username);
-    formData.append("password",password);
 
     try{
-      const response = await post("http://localhost:3000/api/login", formData);
+      const response = await axios.post(`${baseURL}/api/login`, formData);
       console.log(response)
+       
+       if (response.data.access_token) {
+        localStorage.setItem("token", response.data.access_token); 
+        console.log("Token saved:", response.data.access_token);
+    } else {
+        console.log("Token not found in response");
+    }
     } catch(error){
       console.error(error)
     }
@@ -37,10 +46,10 @@ const Login = () => {
         <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-gray-600">Username</label>
+            <label className="block text-gray-600">Email</label>
             <input
-              type="text"
-              name="username"
+              type="email"
+              name="email"
               value={formData.username}
               onChange={handleChange}
               className="w-full px-4 py-2 mt-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"

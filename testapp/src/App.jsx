@@ -6,6 +6,7 @@ import Signup from './component/Signup'
 import Usestate from './component/Usestate'
 import Array_task from './component/Array_task'
 import ContactPage from './component/ContactPage'
+import AntdForm from './component/AntdForm'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
     <Route path='/' element={<Login/>}/>
     <Route path ='/signup' element ={<Signup/>}/>
     <Route path ="/firstpage" element ={<FirstPage/>}/>
+    <Route path ="/antdform" element ={<AntdForm/>}/>
    </Routes>
    </BrowserRouter>
   
